@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public List<GameObject> zombiesList;
+    //public List<Zombies> zombiesList;
 
     private void Update()
     {
