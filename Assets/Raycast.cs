@@ -11,7 +11,7 @@ public class Raycast : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey(KeyCode.A))
+		if (Input.GetKey(KeyCode.Mouse0))
         {
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out raycastHit, Mathf.Infinity))
             { if (raycastHit.collider.gameObject.tag == "Zombie")
