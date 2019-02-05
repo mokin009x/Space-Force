@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Raycast : MonoBehaviour {
    RaycastHit raycastHit;
@@ -22,6 +23,10 @@ public class Raycast : MonoBehaviour {
                     Destroy(raycastHit.collider.gameObject);
                 }
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.R)){
+            SceneManager.LoadScene(0);
         }
 	}
 }
