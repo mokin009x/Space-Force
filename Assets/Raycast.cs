@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Raycast : MonoBehaviour {
    RaycastHit raycastHit;
-    public Camera camera;
+    public GameObject camera;
 	// Use this for initialization
 	void Start () {
 		

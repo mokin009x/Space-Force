@@ -3489,7 +3489,7 @@ PrefabInstance:
     - target: {fileID: 1114023380, guid: 59490b1e15f39a2419f2ebe2a2ef7064, type: 3}
       propertyPath: camera
       value: 
-      objectReference: {fileID: 1823226295}
+      objectReference: {fileID: 806842168}
     - target: {fileID: 2541631588326413215, guid: 59490b1e15f39a2419f2ebe2a2ef7064,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -4188,6 +4188,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 442594, guid: 1a5e2f40365fe44ada271dd97ea7506f,
     type: 3}
   m_PrefabInstance: {fileID: 791977016}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &806842168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1261008573919235225, guid: 59490b1e15f39a2419f2ebe2a2ef7064,
+    type: 3}
+  m_PrefabInstance: {fileID: 671846568}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &812114028
 PrefabInstance:
