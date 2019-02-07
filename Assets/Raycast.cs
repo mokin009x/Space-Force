@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Raycast : MonoBehaviour {
-   RaycastHit raycastHit;
-    public GameObject camera;
+public class Raycast : MonoBehaviour
+{
+	private Ray test;
+	RaycastHit hit;
+    public Transform camera;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,16 +15,21 @@ public class Raycast : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.DrawRay(camera.transform.position, camera.transform.forward);
+        Debug.DrawRay(camera.position, camera.forward * 10);
 
 		if (Input.GetKey(KeyCode.Mouse0))
-        {
-            if (Physics.Raycast(camera.transform.position, camera.transform.forward, out raycastHit, Mathf.Infinity))
-            { if (raycastHit.collider.gameObject.tag == "Zombie")
+		{
+			test.origin = camera.position;
+			test.direction = camera.forward;
+			bool rayjit = Physics.Raycast(test, out hit, 20f);
+			
+	            if (rayjit && hit.collider.gameObject.CompareTag("Zombie"))
                 {
-                    Destroy(raycastHit.collider.gameObject);
+	                Debug.Log(hit.collider.gameObject);
+	                hit.collider.gameObject.SetActive(false);
+	                Debug.Log(rayjit);
+
                 }
-            }
         }
 
         if (Input.GetKeyDown(KeyCode.R)){
