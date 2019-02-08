@@ -3464,6 +3464,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1823226292}
+    - target: {fileID: 1114023380, guid: 59490b1e15f39a2419f2ebe2a2ef7064, type: 3}
+      propertyPath: ammoCountTxt
+      value: 
+      objectReference: {fileID: 5844745134414621891}
     - target: {fileID: 2541631588326413215, guid: 59490b1e15f39a2419f2ebe2a2ef7064,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -11091,3 +11095,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2134109076}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5844745134414621891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5844745134414621891, guid: a605e73f59e538e429b56e381e16b85b,
+    type: 3}
+  m_PrefabInstance: {fileID: 523514695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
