@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject Hekzombie;
     public Transform player;
+    int canSpawn = 0;
     //public List<GameObject> zombiesList;
     public List<GameObject> zombiesList;
 
@@ -17,10 +18,18 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        for (int i = 0; i < 5; i++)
+        StartCoroutine("Spawner");
+    }
+
+    public IEnumerator Spawner()
+    {
+        Instantiate(Hekzombie, player, false);
+        zombiesList.Add(Hekzombie);
+        yield return new WaitForSeconds(3);
+        if (canSpawn <= 5)
         {
-            Instantiate(Hekzombie, player, false);
-            zombiesList.Add(Hekzombie);
+            canSpawn++;
+            StartCoroutine("Spawner");
         }
     }
 
