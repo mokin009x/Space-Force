@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Zombie Hekzombie;
+    public GameObject Hekzombie;
     public Transform player;
     //public List<GameObject> zombiesList;
-    public List<Zombie> zombiesList;
+    public List<GameObject> zombiesList;
 
     private void Update()
     {
@@ -17,8 +17,11 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        Hekzombie.damage = 100;
-        Instantiate(Hekzombie, player, false);
+        for (int i = 0; i < 5; i++)
+        {
+            Instantiate(Hekzombie, player, false);
+            zombiesList.Add(Hekzombie);
+        }
     }
 
 }
