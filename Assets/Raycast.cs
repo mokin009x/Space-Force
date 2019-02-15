@@ -13,11 +13,13 @@ public class Raycast : MonoBehaviour
 	private Ray test;
 	RaycastHit hit;
     public Transform camera;
+    public TextMeshProUGUI totalZombies;
 	
     private void Start()
     {
         ammoCountTxt.text = ammo.ToString();
         canShoot = true;
+        totalZombies.text = "";
     }
 	// Update is called once per frame
 	void Update () {
@@ -59,6 +61,7 @@ public class Raycast : MonoBehaviour
         yield return new WaitForSeconds(2);
         ammo = 20;
         ammoCountTxt.text = ammo.ToString();
+        totalZombies.text = GameManager.instance.zombiesList.Count.ToString();
         canShoot = true;
     }
 }

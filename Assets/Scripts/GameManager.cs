@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject Hekzombie;
-    static GameManager instance;
+    public static GameManager instance;
     int canSpawn = 0;
     //public List<GameObject> zombiesList;
     public List<GameObject> zombiesList;
