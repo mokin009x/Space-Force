@@ -23,6 +23,7 @@ public class Raycast : MonoBehaviour
     }
 	// Update is called once per frame
 	void Update () {
+        totalZombies.text = GameManager.instance.zombiesList.Count.ToString();
         Debug.DrawRay(camera.position, camera.forward * 10);
         if(ammo <= 0)
             canShoot = false;
@@ -41,7 +42,7 @@ public class Raycast : MonoBehaviour
 	                    Debug.Log(hit.collider.gameObject);
 	                    hit.collider.gameObject.SetActive(false);
 	                    Debug.Log(rayjit);
-
+                        GameManager.instance.zombiesList.Remove(gameObject);
                     }
             }
         }
@@ -61,7 +62,6 @@ public class Raycast : MonoBehaviour
         yield return new WaitForSeconds(2);
         ammo = 20;
         ammoCountTxt.text = ammo.ToString();
-        totalZombies.text = GameManager.instance.zombiesList.Count.ToString();
         canShoot = true;
     }
 }
