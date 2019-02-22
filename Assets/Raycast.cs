@@ -37,13 +37,14 @@ public class Raycast : MonoBehaviour
 		        test.direction = camera.forward;
 		        bool rayjit = Physics.Raycast(test, out hit, 20f);
 			
-	                if (rayjit && hit.collider.gameObject.CompareTag("Zombie"))
-                    {
-	                    Debug.Log(hit.collider.gameObject);
-	                    hit.collider.gameObject.SetActive(false);
-	                    Debug.Log(rayjit);
-                        GameManager.instance.zombiesList.Remove(gameObject);
-                    }
+	            if (rayjit && hit.collider.gameObject.CompareTag("Zombie"))
+                {
+	                Debug.Log(hit.collider.gameObject);
+	                hit.collider.gameObject.SetActive(false);
+                    PlayerManager.instance.playerPoints += 50;
+	                Debug.Log(rayjit);
+                    GameManager.instance.zombiesList.Remove(hit.collider.gameObject);
+                }
             }
         }
 
